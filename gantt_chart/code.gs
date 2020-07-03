@@ -4,6 +4,7 @@
 // Event
 // https://developers.google.com/apps-script/guides/triggers/events
 
+// public sheet with scripts: https://docs.google.com/spreadsheets/d/1nEUos1LPKZsRsHTEdk9JvyiO4u_qqGgHj3z77WmI-Vg/edit?usp=sharing
 // Check output on https://script.google.com/u/0/home/projects/
 
 /*
