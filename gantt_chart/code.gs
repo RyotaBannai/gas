@@ -8,7 +8,6 @@
 
 /*
 *　Gantt chart： Fill the start and end date, and scripts automatically fill the cell with the length of date.
-// public sheet with scripts: https://docs.google.com/spreadsheets/d/1nEUos1LPKZsRsHTEdk9JvyiO4u_qqGgHj3z77WmI-Vg/edit?usp=sharing
 */
 
 function getThisCellDate(begin_date, nth_column){
@@ -36,11 +35,18 @@ function onEdit(event){
   var cell = event.range;
   var sheet = SpreadsheetApp.getActiveSheet(); 
   var edited_column_index = sheet.getRange(cell.getA1Notation()).getColumn();
-  if(cell.getValue() === '' || (edited_column_index !== 1 && edited_column_index !== 2)) return;
+  
+  // Guard
+  if(cell.getValue() === '' 
+     || !(cell.getValue() instanceof Date)
+     || (edited_column_index !== 1 && edited_column_index !== 2)
+    ) return;
   
   else{
     if(edited_column_index === 2){
       cell = cell.offset(0, -1);
+      // Guard
+      if(!(cell.getValue() instanceof Date)) return;
     }
     this_start_date = Moment.moment(cell.getValue());
     begin_date = Moment.moment(sheet.getRange("B2").getValue());
