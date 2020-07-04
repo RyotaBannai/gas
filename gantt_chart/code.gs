@@ -5,6 +5,7 @@
 // https://developers.google.com/apps-script/guides/triggers/events
 
 // Check output on https://script.google.com/u/0/home/projects/
+// Link to the sheet with scrips → https://docs.google.com/spreadsheets/d/1nEUos1LPKZsRsHTEdk9JvyiO4u_qqGgHj3z77WmI-Vg/edit#gid=0
 
 /*
 *　Gantt chart： Fill the start and end date, and scripts automatically fill the cell with the length of date.
